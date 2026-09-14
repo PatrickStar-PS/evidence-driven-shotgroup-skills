@@ -1,0 +1,6 @@
+interface:
+  display_name: "双段并发台词解析"
+  short_description: "重叠双段并发提取、合并并校验整集中文台词台账"
+  default_prompt: "Use $align-episode-dialogue-two-segment to parse this episode concurrently as two overlapping clips and return one validated Chinese dialogue ledger with absolute timestamps, speakers, and delivery details."
+policy:
+  allow_implicit_invocation: true

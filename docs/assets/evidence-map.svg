@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="780" viewBox="0 0 1200 780" role="img" aria-labelledby="title desc">
+<title id="title">短剧镜头组分析的视觉证据方案示意</title>
+<desc id="desc">原片时间轴拆成带重叠的范围，本地生成四类证据：镜头空间、动作关键帧、高运动三联帧、人物轨迹。经姿态复杂度门控可增加姿态证据，最后交由模型判断并用契约校验。</desc>
+<style>text{font-family:Arial,"Noto Sans CJK SC","Microsoft YaHei",sans-serif;fill:#18243a} .small{font-size:17px;fill:#51617b}.label{font-size:20px;font-weight:700}.num{font-size:15px;font-weight:700;fill:#435b7d}.card{fill:#fff;stroke:#d7e1ef;stroke-width:2}.line{stroke:#8395af;stroke-width:3;fill:none}.fig{stroke:#425a78;stroke-width:5;stroke-linecap:round;fill:none}</style>
+<rect width="1200" height="780" fill="#f5f8fc"/>
+<text x="48" y="54" font-size="30" font-weight="700">把模型输入变成可对账的视觉证据</text>
+<text x="49" y="83" class="small">架构示意 · 图中人物与时间均为虚构，不代表真实剧集输出</text>
+<rect x="48" y="116" width="1104" height="104" rx="18" class="card"/>
+<text x="76" y="150" class="label">原片时间轴</text>
+<line x1="237" y1="155" x2="1093" y2="155" stroke="#9db0c8" stroke-width="12" stroke-linecap="round"/>
+<rect x="238" y="139" width="324" height="32" rx="10" fill="#518bd4" opacity=".86"/>
+<rect x="522" y="139" width="328" height="32" rx="10" fill="#27a89a" opacity=".82"/>
+<rect x="810" y="139" width="282" height="32" rx="10" fill="#e49e4d" opacity=".85"/>
+<text x="335" y="161" font-size="16" fill="#fff">范围 A</text><text x="635" y="161" font-size="16" fill="#fff">范围 B</text><text x="925" y="161" font-size="16" fill="#fff">范围 C</text>
+<text x="238" y="197" class="small">按候选切点规划逻辑片段；相邻片段保留物理重叠，最终时间仍回到原片绝对坐标</text>
+<path d="M600 220 L600 252 M175 252 L1025 252 M175 252 L175 279 M458 252 L458 279 M742 252 L742 279 M1025 252 L1025 279" class="line"/>
+<rect x="48" y="279" width="257" height="252" rx="18" class="card"/>
+<rect x="332" y="279" width="257" height="252" rx="18" class="card"/>
+<rect x="616" y="279" width="257" height="252" rx="18" class="card"/>
+<rect x="900" y="279" width="252" height="252" rx="18" class="card"/>
+<text x="70" y="318" class="num">01 · SHOT SPACE</text><text x="70" y="348" class="label">镜头空间</text>
+<rect x="70" y="368" width="213" height="104" rx="9" fill="#e8f1fb"/>
+<path d="M70 450 L176 403 L283 450 M176 403 L176 472 M108 433 L108 472 M244 433 L244 472" stroke="#a1bad5" stroke-width="3" fill="none"/>
+<circle cx="141" cy="408" r="9" fill="#4e8ed5"/><circle cx="218" cy="415" r="9" fill="#e59e4f"/>
+<text x="70" y="502" class="small">切点候选、景别、画面左右</text>
+<text x="354" y="318" class="num">02 · ACTION EVENTS</text><text x="354" y="348" class="label">动作事件帧</text>
+<rect x="354" y="368" width="213" height="104" rx="9" fill="#eaf7f4"/>
+<path d="M380 447 L545 447" stroke="#b5d8d1" stroke-width="4"/><circle cx="413" cy="395" r="12" fill="#28a89b"/><path d="M413 407 L413 447 M413 420 L446 408 M413 420 L389 435" class="fig"/>
+<rect x="450" y="401" width="27" height="21" rx="4" fill="#e6a152"/><path d="M447 412 L430 417" stroke="#e6a152" stroke-width="5"/>
+<text x="354" y="502" class="small">接触、递交、开合等关键动作</text>
+<text x="638" y="318" class="num">03 · MOTION TRIPLET</text><text x="638" y="348" class="label">高运动三联帧</text>
+<rect x="638" y="368" width="65" height="104" rx="7" fill="#edf0fa"/><rect x="712" y="368" width="65" height="104" rx="7" fill="#e4eaf8"/><rect x="786" y="368" width="65" height="104" rx="7" fill="#dbe5f7"/>
+<circle cx="665" cy="398" r="9" fill="#6783c1"/><circle cx="745" cy="394" r="9" fill="#6783c1"/><circle cx="827" cy="391" r="9" fill="#6783c1"/>
+<path d="M665 407 L665 447 M745 403 L751 447 M827 400 L835 447" class="fig"/>
+<path d="M672 432 L729 422 M757 419 L812 409" stroke="#b2bfdb" stroke-width="3" stroke-dasharray="5 5"/>
+<text x="638" y="502" class="small">首 / 中 / 尾，识别连续运动</text>
+<text x="922" y="318" class="num">04 · TRAJECTORY</text><text x="922" y="348" class="label">人物轨迹</text>
+<rect x="922" y="368" width="208" height="104" rx="9" fill="#fff3e7"/>
+<path d="M942 451 C982 451 985 425 1023 419 S1080 405 1106 393" fill="none" stroke="#df9650" stroke-width="6" stroke-dasharray="7 5"/>
+<circle cx="948" cy="448" r="9" fill="#df9650"/><circle cx="1023" cy="419" r="9" fill="#df9650"/><circle cx="1106" cy="393" r="9" fill="#df9650"/>
+<text x="922" y="502" class="small">跨帧位置证据，不等于角色身份</text>
+<path d="M600 531 L600 561" class="line"/>
+<rect x="48" y="561" width="1104" height="80" rx="18" fill="#e8edf8" stroke="#d4dded" stroke-width="2"/>
+<text x="75" y="596" class="label">复杂度门控</text><text x="232" y="596" class="small">多人交叠或姿态复杂时，附加姿态几何；简单片段跳过高成本推理</text>
+<text x="75" y="623" class="small">证据只提出候选，不自动决定切点、身份或动作语义</text>
+<path d="M600 641 L600 669" class="line"/>
+<rect x="48" y="669" width="1104" height="75" rx="18" fill="#172b4d"/>
+<text x="76" y="702" font-size="20" font-weight="700" fill="#fff">原片复核 + 范围级模型判断</text>
+<text x="76" y="729" font-size="16" fill="#cddcf1">结构校验 · 台词来源指纹 · 接缝审计 · 跨镜头状态交接 → JSON / Excel</text>
+</svg>

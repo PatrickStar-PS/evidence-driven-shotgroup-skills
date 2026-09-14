@@ -1,0 +1,8 @@
+{
+  "package": "evidence-driven-shotgroup-skills",
+  "source_snapshot_date": "2026-09-03",
+  "published_layout": "skills/<name>",
+  "skill_count": 8,
+  "adjacent_dependency": "person-trajectory-evidence/scripts/track_people.py",
+  "notes": "Public portfolio packaging; machine-specific script defaults adjusted and one backup file omitted."
+}

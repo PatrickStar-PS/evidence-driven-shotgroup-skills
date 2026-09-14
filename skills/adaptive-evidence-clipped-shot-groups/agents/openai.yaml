@@ -1,0 +1,4 @@
+interface:
+  display_name: "自适应证据并发镜头组"
+  short_description: "多集流水线并发解析并审计镜头组连续性"
+  default_prompt: "Use $adaptive-evidence-clipped-shot-groups to parse the current episode folder with resumable two-level concurrency, reusable cross-window relay-key slots, cached local clipping, full seam audits, and validated JSON and Excel outputs."

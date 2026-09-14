@@ -1,0 +1,4 @@
+interface:
+  display_name: "欧美角色脸谱师"
+  short_description: "为整部剧设计不撞脸、欧美特征清晰的角色脸部身份规范"
+  default_prompt: "Use $design-distinctive-western-faces to design a distinctive Western cast face bible for the current drama and produce prompt injections."

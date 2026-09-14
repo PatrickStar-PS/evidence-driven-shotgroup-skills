@@ -1,0 +1,4 @@
+interface:
+  display_name: "British Asset Localization Sheet"
+  short_description: "Create strict eight-column British drama asset workbooks."
+  default_prompt: "Use $british-asset-localization-sheet to localize a Chinese drama asset workbook into the strict eight-column British asset format."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "中转站 全剧中文资产解析"
+  short_description: "并发解析多集视频并用 Pro 一次完成全剧资产归并"
+  default_prompt: "使用 $bai-video-chinese-assets 并发解析这个剧集目录，并生成供英国本地化使用的五列中文资产表。"
